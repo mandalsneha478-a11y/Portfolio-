@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0c16"/>
+      <stop offset="50%" stop-color="#12162e"/>
+      <stop offset="100%" stop-color="#0b1020"/>
+    </linearGradient>
+    
+    <linearGradient id="cyberCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe"/>
+      <stop offset="100%" stop-color="#4facfe"/>
+    </linearGradient>
+
+    <linearGradient id="neonPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b026ff"/>
+      <stop offset="100%" stop-color="#7928ca"/>
+    </linearGradient>
+
+    <linearGradient id="skinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5c29f"/>
+      <stop offset="100%" stop-color="#d99b70"/>
+    </linearGradient>
+
+    <linearGradient id="hairGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1f1b2e"/>
+      <stop offset="50%" stop-color="#120e24"/>
+      <stop offset="100%" stop-color="#0d091a"/>
+    </linearGradient>
+
+    <linearGradient id="jacketGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e2444"/>
+      <stop offset="50%" stop-color="#151933"/>
+      <stop offset="100%" stop-color="#0f1224"/>
+    </linearGradient>
+
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="400" height="400" rx="200" fill="url(#bgGrad)"/>
+  
+  <!-- Outer Hologram Rings -->
+  <circle cx="200" cy="200" r="190" fill="none" stroke="url(#cyberCyan)" stroke-width="1.5" stroke-dasharray="12 8" opacity="0.4">
+    <animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="40s" repeatCount="indefinite"/>
+  </circle>
+
+  <circle cx="200" cy="200" r="180" fill="none" stroke="url(#neonPurple)" stroke-width="1" stroke-dasharray="24 16 6 12" opacity="0.5">
+    <animateTransform attributeName="transform" type="rotate" from="360 200 200" to="0 200 200" dur="30s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Ambient Glow Behind Head -->
+  <circle cx="200" cy="180" r="120" fill="url(#neonPurple)" opacity="0.25" filter="url(#neonGlow)"/>
+  <circle cx="210" cy="160" r="80" fill="url(#cyberCyan)" opacity="0.2" filter="url(#neonGlow)"/>
+
+  <!-- Back Hair -->
+  <path d="M120 180 C110 260 120 320 135 360 C150 370 250 370 265 360 C280 320 290 260 280 180 Z" fill="url(#hairGrad)"/>
+  
+  <!-- Body / Shoulders -->
+  <path d="M80 400 C80 340 130 300 160 285 L180 330 L220 330 L240 285 C270 300 320 340 320 400 Z" fill="url(#jacketGrad)"/>
+  
+  <!-- Jacket Collar Details & Neon Trim -->
+  <path d="M160 285 L190 350 L200 350 L200 285 Z" fill="#2d3561" opacity="0.8"/>
+  <path d="M240 285 L210 350 L200 350 L200 285 Z" fill="#242c52" opacity="0.8"/>
+  <!-- Cybernetic lapel lines -->
+  <path d="M162 288 L188 348" stroke="url(#cyberCyan)" stroke-width="2" filter="url(#softGlow)" opacity="0.8"/>
+  <path d="M238 288 L212 348" stroke="url(#neonPurple)" stroke-width="2" filter="url(#softGlow)" opacity="0.8"/>
+
+  <!-- Inner Shirt -->
+  <path d="M180 300 L200 340 L220 300 Z" fill="#0d1124"/>
+  <!-- Tech Pendant / AR Node on shirt -->
+  <polygon points="200,312 206,322 200,332 194,322" fill="url(#cyberCyan)" filter="url(#softGlow)"/>
+
+  <!-- Neck -->
+  <rect x="184" y="230" width="32" height="60" rx="10" fill="url(#skinGrad)"/>
+  <path d="M184 255 C192 265 208 265 216 255 Z" fill="#c48358" opacity="0.3"/>
+
+  <!-- Head / Face -->
+  <ellipse cx="200" cy="180" rx="56" ry="68" fill="url(#skinGrad)"/>
+
+  <!-- Ears & Earrings -->
+  <ellipse cx="142" cy="184" rx="7" ry="12" fill="url(#skinGrad)"/>
+  <ellipse cx="258" cy="184" rx="7" ry="12" fill="url(#skinGrad)"/>
+  <!-- Glowing smart earrings -->
+  <circle cx="142" cy="192" r="3.5" fill="url(#cyberCyan)" filter="url(#softGlow)"/>
+  <circle cx="258" cy="192" r="3.5" fill="url(#neonPurple)" filter="url(#softGlow)"/>
+
+  <!-- Hair Base & Forehead Locks -->
+  <path d="M142 165 C140 120 160 92 200 92 C240 92 260 120 258 165 C255 140 245 125 220 125 C190 125 180 145 150 148 C145 152 143 158 142 165 Z" fill="url(#hairGrad)"/>
+  <!-- Stylish Side Strand -->
+  <path d="M144 150 C140 190 142 220 148 240 C145 220 148 180 152 160 Z" fill="url(#hairGrad)"/>
+  <path d="M256 150 C260 190 258 220 252 240 C255 220 252 180 248 160 Z" fill="url(#hairGrad)"/>
+
+  <!-- Eyebrows -->
+  <path d="M165 160 Q180 156 190 161" stroke="#251a24" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <path d="M210 161 Q220 156 235 160" stroke="#251a24" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+  <!-- Eyes with futuristic glint -->
+  <!-- Left Eye -->
+  <ellipse cx="178" cy="174" rx="8" ry="5.5" fill="#ffffff"/>
+  <circle cx="178" cy="174" r="4.2" fill="#2d1d2b"/>
+  <circle cx="179" cy="173" r="1.8" fill="#4facfe"/>
+  <circle cx="176.5" cy="172" r="1.2" fill="#ffffff"/>
+  
+  <!-- Right Eye -->
+  <ellipse cx="222" cy="174" rx="8" ry="5.5" fill="#ffffff"/>
+  <circle cx="222" cy="174" r="4.2" fill="#2d1d2b"/>
+  <circle cx="223" cy="173" r="1.8" fill="#00f2fe"/>
+  <circle cx="220.5" cy="172" r="1.2" fill="#ffffff"/>
+
+  <!-- Sleek AR Smart Glasses / HUD Accent (Transparent futuristic visor accent) -->
+  <path d="M160 172 Q178 168 196 172 L198 174 L202 174 L204 172 Q222 168 240 172" stroke="url(#cyberCyan)" stroke-width="2" fill="none" opacity="0.85" filter="url(#softGlow)"/>
+  <circle cx="160" cy="172" r="2.5" fill="#00f2fe" filter="url(#softGlow)"/>
+  <circle cx="240" cy="172" r="2.5" fill="#b026ff" filter="url(#softGlow)"/>
+
+  <!-- Nose -->
+  <path d="M198 178 L196 195 Q200 198 204 195" stroke="#be764a" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+  <!-- Lips with warm confident smile -->
+  <path d="M186 212 Q200 220 214 212" stroke="#b3495b" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+  <path d="M188 212 Q200 215 212 212" fill="#d95e72"/>
+
+  <!-- Data Stream Overlay & Floating Tech Dots -->
+  <g opacity="0.6">
+    <circle cx="70" cy="120" r="3" fill="#00f2fe" filter="url(#softGlow)"/>
+    <line x1="70" y1="120" x2="110" y2="140" stroke="#00f2fe" stroke-width="1" stroke-dasharray="3 3"/>
+    
+    <circle cx="330" cy="130" r="3" fill="#b026ff" filter="url(#softGlow)"/>
+    <line x1="330" y1="130" x2="290" y2="150" stroke="#b026ff" stroke-width="1" stroke-dasharray="3 3"/>
+
+    <circle cx="90" cy="270" r="2.5" fill="#00f2fe"/>
+    <circle cx="310" cy="260" r="3" fill="#10b981"/>
+    
+    <!-- Mini Code / Binary / Neural tags -->
+    <text x="65" y="105" fill="#00f2fe" font-family="'JetBrains Mono', monospace" font-size="10" opacity="0.8">&lt;AI / DS&gt;</text>
+    <text x="290" y="115" fill="#b026ff" font-family="'JetBrains Mono', monospace" font-size="10" opacity="0.8">{AR / VR}</text>
+  </g>
+
+  <!-- Futuristic Holographic Ring Orbiting Around -->
+  <ellipse cx="200" cy="330" rx="140" ry="24" fill="none" stroke="url(#cyberCyan)" stroke-width="2" stroke-dasharray="16 10" opacity="0.7" filter="url(#softGlow)">
+    <animateTransform attributeName="transform" type="rotate" from="0 200 330" to="360 200 330" dur="20s" repeatCount="indefinite"/>
+  </ellipse>
+</svg>
